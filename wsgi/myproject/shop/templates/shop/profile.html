@@ -1,0 +1,13 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+
+{% for details in users %}
+ <p>Name : {{ details.name }}</p>
+ <p>Email : {{ details.email }}</p>
+ <p>Address : {{ details.address }}</p>
+ <p>Phone : {{ details.phone }}</p>
+ {% endfor %}
+
+
+{% endblock %}

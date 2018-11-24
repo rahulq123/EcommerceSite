@@ -1,0 +1,34 @@
+{% extends "shop/base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<script src="{% static 'js/jquery-1.11.2.js' %}"></script>
+<script src="{% static 'js/ajax.js' %}"></script>
+
+
+<br>
+<br>
+<div class='main'>
+   <h3>Please enter your details to sign up</h3>
+   <form method='POST' action="/register/">
+   	{% csrf_token %}
+      <span class='fieldname'>Username</span>
+      <input type='text' maxlength='16' id='regusername' name='username'>
+         <span id='info'></span>
+         <br>
+         <span class='fieldname'>Password</span>
+         <input type='password' maxlength='16' name='password'><br>
+		 <span class='fieldname'>Name</span>
+         <input type='text' maxlength='16' name='name'><br>
+		 <span class='fieldname'>Email</span>
+         <input type='text' maxlength='50' name='email'><br>
+		 <span class='fieldname'>Address</span>
+         <input type='text' maxlength='50' name='address'><br>
+		 <span class='fieldname'>Phone</span>
+         <input type='text' maxlength='11' name='phone'><br>
+         <span class='fieldname'>&nbsp;</span>
+      <input type='submit' value='Sign up'>
+   </form>
+</div>
+{% endblock %}
